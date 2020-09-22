@@ -15,7 +15,7 @@ camera.start_preview()
  
 while True:
     try:
-    	camera.capture('image.jpg')
+        camera.capture('image.jpg')
         temperature = dhtDevice.temperature * (9 / 5) + 32
         humidity = dhtDevice.humidity
         now = datetime.now(pytz.timezone('America/New_York'))
@@ -27,9 +27,9 @@ while True:
 		url = "http://backend-dev22.us-east-1.elasticbeanstalk.com/sensor_readings/"
 		
 		try:
-		    response = requests.post(url, data = sensor_reading, files = {'image': open('image.jpg', 'rb')})
+            response = requests.post(url, data = sensor_reading, files = {'image': open('image.jpg', 'rb')})
 		except Exception as error:
-		    raise error
+            raise error
     except RuntimeError as error:
         # Errors happen fairly often, DHT's are hard to read, just keep going
         print(error.args[0])
