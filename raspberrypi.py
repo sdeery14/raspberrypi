@@ -20,10 +20,10 @@ while True:
         humidity = dhtDevice.humidity
         now = datetime.now(pytz.timezone('America/New_York'))
 		sensor_reading = {
-		    "taken": now,
-		    "temp": temperature,
-		    "humidity": humidity
-		    }
+            "taken": now,
+            "temp": temperature,
+            "humidity": humidity
+		}
 		url = "http://backend-dev22.us-east-1.elasticbeanstalk.com/sensor_readings/"
 		
 		try:
