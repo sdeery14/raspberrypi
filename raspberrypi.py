@@ -28,6 +28,7 @@ while True:
 
         try:
             response = requests.post(url, data = sensor_reading, files = {'image': open('image.jpg', 'rb')})
+            return response
         except Exception as error:
             raise error
     except RuntimeError as error:
