@@ -24,7 +24,7 @@ while True:
             "temp": temperature,
             "humidity": humidity
         }
-        url = "http://backend-dev22.us-east-1.elasticbeanstalk.com/sensor_readings/"
+        url = "https://seandeery-portfolio-api.com/sensor_readings/"
 
         try:
             response = requests.post(url, data = sensor_reading, files = {'image': open('image.jpg', 'rb')})
